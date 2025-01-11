@@ -1,0 +1,137 @@
+:root {
+  --background-color: #28b487;
+  --text-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 2rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.5;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: radial-gradient(circle, #28b487, #7dd56f)
+  
+}
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.show-modal:hover {
+  background-color: #26877d;
+  transform: scale(1.1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #26877d;
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.close-modal:hover {
+  background-color: #1e6b5e;
+  transform: scale(1.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 700px;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  z-index: 10;
+}
+.modal--small {
+  width: 50%;
+}
+.modal h1 {
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.modal p {
+  animation: fadeIn 3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 5;
+}
+
+.modal, .overlay {
+  transition: opacity 0.3s ease;
+}
